@@ -1,0 +1,19 @@
+	//An element is called a peak element if its value is not smaller than the value of its adjacent elements(if they exists)
+    class Solution
+{
+    public int peakElement(int[] arr,int n)
+    {
+      //checking for edge cases ==> if array have 1 or only 2 elements
+       if(n==1 || arr[0]>arr[1]){
+           return 0;
+       }
+      for(int index=1;index<n-1;index++){
+      //checking for element if gteater than both(left and right) element or not
+           if(arr[index]>arr[index-1] && arr[index]>arr[index+1]){
+               return index;
+           }
+          
+       }
+       return n-1;
+    }
+}
